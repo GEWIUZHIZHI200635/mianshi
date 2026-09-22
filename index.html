@@ -5,9 +5,12 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>
 气象局面试训练系统
 </title>
+
 
 <link rel="stylesheet" href="style.css">
 
@@ -26,21 +29,43 @@
 </button>
 
 
+
+<div class="question-area">
+
+
+
 <div id="question">
 点击按钮开始
 </div>
 
 
+</div>
+
+
+
+<!-- 空白距离 -->
+
+<div class="answer-space">
+
 
 <button onclick="showAnswer()">
-查看参考答案
+
+参考答案
+
 </button>
 
 
 
+
 <div id="answer">
+
 请先选择问题
+
 </div>
+
+
+</div>
+
 
 
 </div>
@@ -82,6 +107,7 @@ currentQuestion=questions[index];
 
 document.getElementById("question").innerHTML=
 currentQuestion["面试问题"];
+
 
 
 document.getElementById("answer").innerHTML=

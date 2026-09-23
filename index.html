@@ -23,6 +23,47 @@
 <div class="box">
 
 
+<select id="category">
+
+<option value="全部">
+全部问题
+</option>
+
+<option value="自我介绍">
+自我介绍
+</option>
+
+<option value="岗位认知">
+岗位认知
+</option>
+
+<option value="个人能力">
+个人能力
+</option>
+
+<option value="专业能力">
+专业能力
+</option>
+
+<option value="应急处理">
+应急处理
+</option>
+
+<option value="区域气象认知">
+区域气象认知
+</option>
+
+<option value="新疆气象认知">
+新疆气象认知
+</option>
+
+<option value="气象基础知识">
+气象基础知识
+</option>
+
+
+</select>
+  
 
 <button onclick="randomQuestion()">
 随机面试问题
@@ -97,21 +138,50 @@ questions=data;
 function randomQuestion(){
 
 
+let category =
+document.getElementById("category").value;
+
+
+
+let list;
+
+
+
+if(category=="全部"){
+
+
+list=questions;
+
+
+}
+
+else{
+
+
+list=questions.filter(function(item){
+
+return item["分类"]==category;
+
+});
+
+
+}
+
+
+
 let index=Math.floor(
-Math.random()*questions.length
+Math.random()*list.length
 );
 
 
-currentQuestion=questions[index];
+
+currentQuestion=list[index];
+
 
 
 document.getElementById("question").innerHTML=
 currentQuestion["面试问题"];
 
-
-
-document.getElementById("answer").innerHTML=
-"请先思考，再查看答案";
 
 
 }
